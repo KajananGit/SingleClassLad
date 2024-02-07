@@ -91,5 +91,15 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo(100);
     }
 
+    @Test
+    public void canWithdrawMoney(){
+        bankAccount.withdraw(100);
+        int actual = bankAccount.getBalance();
+        assertThat(actual).isEqualTo(-100);
+    }
+
+    
+
+
 
 }
