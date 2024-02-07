@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class BankAccount {
     private String firstName;
     private String lastName;
@@ -69,7 +71,12 @@ public class BankAccount {
     }
 
     public void payInterest(){
-        balance = (int) (balance + balance * 0.2);
+        if(Objects.equals(accountType, "Savings")){
+            balance = (int) (balance + balance * 0.2);
+        }
+        if(Objects.equals(accountType, "Personal")){
+            balance = (int) (balance + balance * 0.05);
+        }
     }
 
 
