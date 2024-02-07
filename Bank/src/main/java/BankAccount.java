@@ -66,6 +66,12 @@ public class BankAccount {
         balance -= withdrawalAmount;
     }
 
+    public void payInterest(){
+        balance = (int) (balance + balance * 0.2);
+    }
+
+
+
 
 //
 }
