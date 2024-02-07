@@ -33,6 +33,15 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    public void canSetLastName(){
+        bankAccount.setFirstName("Hardy");
+        String actual = bankAccount.getFirstName();
+        assertThat(actual).isEqualTo("Hardy");
+    }
+
+    
+
 
 
 
