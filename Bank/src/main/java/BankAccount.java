@@ -7,6 +7,7 @@ public class BankAccount {
     private int accountNumber;
     private int balance;
     private String accountType;
+    private int overdraft;
 
     public BankAccount(String firstName, String lastName, String dateOfBirth, int accountNumber, String accountType){
         this.firstName = firstName;
@@ -15,6 +16,7 @@ public class BankAccount {
         this.accountNumber = accountNumber;
         this.balance = 0;
         this.accountType = accountType;
+        this.overdraft = -500;
     }
 
 //    Getters and Setters methods
@@ -67,13 +69,27 @@ public class BankAccount {
         this.accountType = accountType;
     }
 
+    public int getOverdraft() {
+        return overdraft;
+    }
+
+    public void setOverdraft(int overdraft) {
+        this.overdraft = overdraft;
+    }
+
+
+
+
+//    Custom methods
     public void deposit(int deposit){
         balance += deposit;
     }
 
 
     public void withdraw(int withdrawalAmount){
-        balance -= withdrawalAmount;
+        if(balance - withdrawalAmount >= overdraft){
+            balance -= withdrawalAmount;
+        }
     }
 
     public void payInterest(){
