@@ -56,5 +56,11 @@ public class BankAccount {
     }
 
 
+
+    public void deposit(int deposit){
+        balance += deposit;
+    }
+
+
 //
 }
