@@ -70,6 +70,20 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo(007);
     }
 
+    @Test
+    public void canGetBalance(){
+        int expected = 0;
+        int actual = bankAccount.getBalance();
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void canSetBalance(){
+        bankAccount.setBalance(100);
+        int actual = bankAccount.getBalance();
+        assertThat(actual).isEqualTo(100);
+    }
+
 
 
 
