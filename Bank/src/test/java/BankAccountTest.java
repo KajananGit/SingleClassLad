@@ -18,4 +18,22 @@ public class BankAccountTest {
         String actual = bankAccount.getFirstName();
         assertThat(actual).isEqualTo(expected);
     }
+
+    @Test
+    public void canSetFirstName(){
+        bankAccount.setFirstName("Tom");
+        String actual = bankAccount.getFirstName();
+        assertThat(actual).isEqualTo("Tom");
+    }
+
+    @Test
+    public void canGetLastName(){
+        String expected = "Wayne";
+        String actual = bankAccount.getLastName();
+        assertThat(actual).isEqualTo(expected);
+    }
+
+
+
+
 }
