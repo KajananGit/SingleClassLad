@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 
 public class BankAccountTest {
 
@@ -52,6 +53,21 @@ public class BankAccountTest {
         bankAccount.setDateOfBirth("07/10/1999");
         String actual = bankAccount.getDateOfBirth();
         assertThat(actual).isEqualTo("07/10/1999");
+    }
+
+    @Test
+    public void canGetAccountNumber(){
+        int expected = 3943;
+        int actual = bankAccount.getAccountNumber();
+        assertThat(actual).isEqualTo(expected);
+
+    }
+
+    @Test
+    public void canSetAccountNumber(){
+        bankAccount.setAccountNumber(007);
+        int actual = bankAccount.getAccountNumber();
+        assertThat(actual).isEqualTo(007);
     }
 
 
