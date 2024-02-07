@@ -40,7 +40,19 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo("Hardy");
     }
 
-    
+    @Test
+    public void canGetDateOfBirth(){
+        String expected = "23/07/1999";
+        String actual = bankAccount.getDateOfBirth();
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void canSetDateOfBirth(){
+        bankAccount.setDateOfBirth("07/10/1999");
+        String actual = bankAccount.getDateOfBirth();
+        assertThat(actual).isEqualTo("07/10/1999");
+    }
 
 
 
