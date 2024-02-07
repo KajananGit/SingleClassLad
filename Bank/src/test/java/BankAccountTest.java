@@ -130,6 +130,15 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo(105);
     }
 
+    @Test
+    public void cannotPayInterestOnAnyAccountType(){
+        bankAccount.setAccountType("Credit");
+        bankAccount.deposit(100);
+        bankAccount.payInterest();
+        int actual = bankAccount.getBalance();
+        assertThat(actual).isEqualTo(100);
+    }
+
 
 
 }
