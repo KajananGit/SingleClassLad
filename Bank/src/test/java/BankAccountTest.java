@@ -84,7 +84,12 @@ public class BankAccountTest {
         assertThat(actual).isEqualTo(100);
     }
 
-
+    @Test
+    public void canDepositMoney(){
+        bankAccount.deposit(100);
+        int actual = bankAccount.getBalance();
+        assertThat(actual).isEqualTo(100);
+    }
 
 
 }
