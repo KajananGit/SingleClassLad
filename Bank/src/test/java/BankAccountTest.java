@@ -10,7 +10,7 @@ public class BankAccountTest {
 
     @BeforeEach
     public void setUp(){
-        bankAccount = new BankAccount("Bruce", "Wayne", "23/07/1999", 3943);
+        bankAccount = new BankAccount("Bruce", "Wayne", "23/07/1999", 3943, "Savings");
     }
 
     @Test

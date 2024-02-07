@@ -4,13 +4,15 @@ public class BankAccount {
     private String dateOfBirth;
     private int accountNumber;
     private int balance;
+    private String accountType;
 
-    public BankAccount(String firstName, String lastName, String dateOfBirth, int accountNumber){
+    public BankAccount(String firstName, String lastName, String dateOfBirth, int accountNumber, String accountType){
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.accountNumber = accountNumber;
         this.balance = 0;
+        this.accountType = accountType;
     }
 
 //    Getters and Setters methods
