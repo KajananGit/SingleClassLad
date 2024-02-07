@@ -59,7 +59,13 @@ public class BankAccount {
         this.balance = balance;
     }
 
+    public String getAccountType() {
+        return accountType;
+    }
 
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
 
     public void deposit(int deposit){
         balance += deposit;
@@ -71,11 +77,13 @@ public class BankAccount {
     }
 
     public void payInterest(){
-        if(Objects.equals(accountType, "Savings")){
+        if(accountType == "Savings"){
             balance = (int) (balance + balance * 0.2);
         }
-        if(Objects.equals(accountType, "Personal")){
+        if(accountType == "Personal"){
             balance = (int) (balance + balance * 0.05);
+        }
+        else {
         }
     }
 

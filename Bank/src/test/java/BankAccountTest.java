@@ -99,11 +99,35 @@ public class BankAccountTest {
     }
 
     @Test
-    public void canPayInterest(){
+    public void canGetAccountType(){
+        String expected = "Savings";
+        String actual = bankAccount.getAccountType();
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void canSetAccountType(){
+        bankAccount.setAccountType("Personal");
+        String actual = bankAccount.getAccountType();
+        assertThat(actual).isEqualTo("Personal");
+    }
+
+
+    @Test
+    public void canPayInterestOnSavingsAccount(){ // If account type == Savings 20% interest rate should be paid
         bankAccount.deposit(100);
         bankAccount.payInterest();
         int actual = bankAccount.getBalance();
         assertThat(actual).isEqualTo(120);
+    }
+
+    @Test
+    public void canPayInterestOnPersonalAccount(){ // If account type == Savings .05% interest rate should be paid
+        bankAccount.deposit(100);
+        bankAccount.setAccountType("Personal");
+        bankAccount.payInterest();
+        int actual = bankAccount.getBalance();
+        assertThat(actual).isEqualTo(105);
     }
 
 
